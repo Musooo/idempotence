@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "decimalToBin.h"
+#include "arrFunc.h"
 
 int moduleExp(int a, int m, int n) {
     int res = 1;
@@ -18,15 +19,25 @@ int main(int argc, char *argv[]) {
     int res = moduleExp(a, m, n);
     printf("%d\n", res);
 
-    // int *arr = NULL;
-    // int size = 0;
-    // dToB(&arr, a, &size);
+    int *arr = NULL;
+    int size = 0;
+    dToB(&arr, a, &size);
 
-    // for (int i = size - 1; i >= 0; i--) {
-    //     printf("%d", arr[i]);
-    // }
-    // printf("\n");
+    for (int i = size - 1; i >= 0; i--) {
+        printf("%d", arr[i]);
+    }
+    printf("\n");
 
-    // free(arr);
+    int *revArr = NULL;
+    int revSize = 0;
+    reverseArr(&arr, &revArr,&size,&revSize);
+
+    for (int i = size - 1; i >= 0; i--) {
+        printf("%d", revArr[i]);
+    }
+    printf("\n");
+
+    free(arr);
+    free(revArr);
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "decimalToBin.h"
+#include "arrFunc.h"
 #include <stdlib.h>
 
 void dToB(int **arr, int num, int *size) {
@@ -9,8 +10,3 @@ void dToB(int **arr, int num, int *size) {
     }
 }
 
-void addNToarr(int **arr, int n, int *size) {
-    *arr = (int*) realloc(*arr, (*size + 1) * sizeof(int));
-    (*arr)[*size] = n;
-    (*size)++;
-}
