@@ -1,31 +1,24 @@
-# Compiler
 CC = gcc
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -std=c11
+CFLAGS = -Wall -Wextra -std=c99 -O2
 
-# Source files
-SRCS = $(wildcard *.c)
+SRC = main.c decimalToBin.c
+OBJ = $(SRC:.c=.o)
 
-# Object files
-OBJS = $(SRCS:.c=.o)
+TARGET = program
 
-# Executable name
-EXEC = program
+all: $(TARGET)
 
-# Default target
-all: $(EXEC)
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET)
 
-# Link object files to create the executable
-$(EXEC): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
-
-# Compile source files to object files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean up build files
 clean:
-	rm -f $(OBJS) $(EXEC)
+	rm -f $(OBJ) $(TARGET)
 
-.PHONY: all clean
+run: $(TARGET)
+	./$(TARGET)
+
+.PHONY: all clean run

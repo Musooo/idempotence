@@ -1,2 +1,3 @@
 program
 main.o
+decimalToBin.o
