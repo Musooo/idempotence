@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "arrFunc.h"
 
@@ -12,4 +13,11 @@ void reverseArr(int **arr, int **revArr, int *size, int *sizeRev){
     while (*sizeRev!=*size){
         addNToarr(revArr,(*arr)[*size-*sizeRev-1],sizeRev);
     }
+}
+
+void printArr(int *arr, int size){
+    for (int i = size - 1; i >= 0; i--) {
+        printf("%d", arr[i]);
+    }
+    printf("\n");
 }

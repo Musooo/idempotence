@@ -13,7 +13,7 @@ int moduleExp(int a, int m, int n) {
 
 int main(int argc, char *argv[]) {
     int a = atoi(argv[1]); // base
-    int n = atoi(argv[2]); // esponente
+    int n = atoi(argv[2]); // exponent
     int m = atoi(argv[3]); // modulo
 
     int res = moduleExp(a, m, n);
@@ -23,19 +23,13 @@ int main(int argc, char *argv[]) {
     int size = 0;
     dToB(&arr, a, &size);
 
-    for (int i = size - 1; i >= 0; i--) {
-        printf("%d", arr[i]);
-    }
-    printf("\n");
+    printArr(arr,size);
 
     int *revArr = NULL;
     int revSize = 0;
     reverseArr(&arr, &revArr,&size,&revSize);
 
-    for (int i = size - 1; i >= 0; i--) {
-        printf("%d", revArr[i]);
-    }
-    printf("\n");
+    printArr(revArr,size);
 
     free(arr);
     free(revArr);
