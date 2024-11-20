@@ -8,10 +8,21 @@ void addNToarr(int **arr, int n, int *size) {
     (*size)++;
 }
 
-void reverseArr(int **arr, int **revArr, int *size, int *sizeRev){
+void reverseArrCopy(int **arr, int **revArr, int *size, int *sizeRev){
     *sizeRev = 0;
     while (*sizeRev!=*size){
         addNToarr(revArr,(*arr)[*size-*sizeRev-1],sizeRev);
+    }
+}
+
+void reverseArr(int *arr,int *size){
+    int index = 0;
+    while (index < *size/2){
+        printf("a: %d b: %d \n", arr[index], arr[*size-1-index]);
+        arr[index] = arr[index] + arr[*size-1-index];
+        arr[*size-1-index] = arr[index] - arr[*size-1-index];
+        arr[index] -= arr[*size-1-index];
+        index++;
     }
 }
 

@@ -22,16 +22,11 @@ int main(int argc, char *argv[]) {
     int *arr = NULL;
     int size = 0;
     dToB(&arr, a, &size);
-
+    printArr(arr,size);
+    
+    reverseArr(arr,&size);
     printArr(arr,size);
 
-    int *revArr = NULL;
-    int revSize = 0;
-    reverseArr(&arr, &revArr,&size,&revSize);
-
-    printArr(revArr,size);
-
     free(arr);
-    free(revArr);
     return 0;
 }
