@@ -18,7 +18,6 @@ void reverseArrCopy(int **arr, int **revArr, int *size, int *sizeRev){
 void reverseArr(int *arr,int *size){
     int index = 0;
     while (index < *size/2){
-        printf("a: %d b: %d \n", arr[index], arr[*size-1-index]);
         arr[index] = arr[index] + arr[*size-1-index];
         arr[*size-1-index] = arr[index] - arr[*size-1-index];
         arr[index] -= arr[*size-1-index];
