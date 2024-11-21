@@ -21,7 +21,8 @@ int main(int argc, char *argv[]) {
     // printf("%d\n", result);
 
     // free(arr);
-    int num = pow(2,3);
+    char arr[] = {'1', '2'};
+    int num = stringtoint(arr,2,0);
     printf("%d\n",num);
     return 0;
 }

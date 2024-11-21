@@ -24,3 +24,11 @@ int pow(int n,int b){
     }
     return n*pow(n,b-1);
 }
+
+int stringtoint(char *arr,int pos,int index){
+    if (pos==0){
+        return 0;
+    }
+
+    return (arr[index]-48)*pow(10,pos-1)+stringtoint(arr,pos-1,index+1);
+}
