@@ -2,7 +2,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -std=c99 -O2
 
-SRC = main.c decimalToBin.c arrFunc.c
+SRC = main.c decimalToBin.c arrFunc.c mathcalc.c
 OBJ = $(SRC:.c=.o)
 
 TARGET = program
