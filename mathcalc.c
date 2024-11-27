@@ -31,3 +31,17 @@ int stringtoint(char *arr,int pos,int index){
 
     return (arr[index]-48)*pow(10,pos-1)+stringtoint(arr,pos-1,index+1);
 }
+
+int euclid(int a, int b){
+    if (a < b){
+        a = a+b;
+        b = a-b;
+        a = b-a;
+    }
+
+    if (a%b==0){
+        return b;
+    }
+
+    return euclid(b, a%b);
+}
